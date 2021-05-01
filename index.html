@@ -1,18 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"> 
     <title>Jean Enterprise</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+       .wrapper{
+          display:grid;
+          grid-template-columns: 70% 30%;
+          grid-column-gap:1em;
+          grid-row-gap:1em;
+       }
+
+       .wrapper > div{
+         background=eee;
+         padding:1em;
+       }
+       .wrapper > div:nth-child(odd){
+         background:ddd;
+       }
+
+    </style>
 </head>
 <body>
+
+ <table>
+   <tr>
+    <td><a href="index.html">Home</a></td>
+    <td><a href="portfolio.html">Portfolio</a></td>
+    <td><a href="about.html">About me</a></td>
+    <td><a href="contact.html">Contact</a></td>
+   </tr>
+ </table>
+
+</body>
+  <section class="gallery-links">
+    <div class="wrapper">
+      <h2>Gallery</h2>
+
+    <div class="gallery-container">
+      <a href="#">
+        <div></div>
+        <h3>Helping Hands</h3>
+        <p></p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Corporate Roundtable</h3>
+        <p></p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Corporate</h3>
+        <p></p>
+      </a>
+     </div>
+
+     <div class="gallery upload">     
+       <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/for-data">
+         <input type="text" name="filename" placeholder="File name...">
+         <input type="text" name="filetitle" placeholder="Image title...">
+         <input type="text" name="filedesc" placeholder="Image description...">
+         <input type="file" name="file">
+         <button type="submit" name="submit">UPLOAD</button>
+       </form>
+     </div>
+  </section>
+
+<body>
+  <div class="wrapper">
+   <div>
     <h1>Jean Enterprise</h1>
     <img src="C:\Users\ejb97\OneDrive\Pictures\Scans\technology world.jpg" width="300" height="168" alt="technology world">
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/xHFpAKFEqbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
     <h2>Why we are here</h2>
     <p>Our vision is to help failing companies get back to being productive and efficient</p>
+    <iframe src="https://open.spotify.com/embed/track/4WsMQ3rw3Y5JPHIgJcG8Qc" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
     <h2>Link</h2>
     <p><a href="C:\Users\ejb97\OneDrive\Desktop\HTML">Jean Enterprise</a></p>
-</body>
+   </div>
+    <div class="container">
+ </body>
 </html>
 
 </head>
@@ -21,10 +91,48 @@
     <article>
         <h1> Developer Comments </h1>
         <p> Coding is the use of programming language to have the PC act the way that you want it too. In each sentence there is defined directions for that PC so that it forms a small set of codes. the set forms a script which can form a program. Usually one set or more can form that program.</p>
+        
     </article>
 
     <footer>
         <img src="C:\Users\ejb97\OneDrive\Pictures\Scans\disclaimer.jpg" width="300" height="168" alt="disclaimer">
     </footer>
+
+
+<html>
+<body>
+
+<form action="response_page.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+Gender: <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other
+<button type="submit" name="submit">Submit</button>
+</form>
+
+<?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+</body>
+</html> 
 
 </body>

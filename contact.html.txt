@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"> 
     <title>Jean Enterprise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="contact.html">Contact</a></li>
+   </ul>
+  </nav>
+
     <h1>Jean Enterprise</h1>
     <img src="C:\Users\ejb97\OneDrive\Pictures\Scans\technology world.jpg" width="300" height="168" alt="technology world">
 
@@ -28,28 +39,3 @@
     </footer>
 
 </body>
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
